@@ -1,7 +1,23 @@
 import express from 'express';
+import cors from 'cors';
+import { Routes } from "./src/routes/Routes";
 
-const app = express();
+class Api { 
+    public app: express.Application;
+    public routes: Routes;
 
-app.get('/', (req, res) => res.send('Hello World'))
+    constructor() {
+        this.app = express();
+        this.app.use(express.json());
+        this.app.listen(3333);
+        this.config();
+        this.routes = new Routes(this.app);
+    }
 
-app.listen(3333, ()=>console.log('Running on port 3333'))
+    private config(): void{ 
+        this.app.use(cors())
+    }
+
+}
+
+export default Api;

@@ -1,11 +1,13 @@
 import React from 'react';
-import Login from './View/login/'
+import Login from './View/Login'
+import Controle from './View/Controle'
 
 
 function App() {
   return (
    <>
-    <Login />
+    {/* <Login /> */}
+    <Controle />
     </>
   );
 }

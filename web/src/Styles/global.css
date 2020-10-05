@@ -3,6 +3,11 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+* {
+  
+    color: #DFDAE8
+}
+
 html,
 body { 
     background-color : #090527;

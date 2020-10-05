@@ -2,19 +2,20 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/esm/NavDropdown';
 import Nav from 'react-bootstrap/esm/Nav';
+import './style.css'
 
-const Controle = () => {
+const Header = () => {
     return (
         <>
-            <Navbar bg="dark" expand="lg">
-                <Navbar.Brand href="#home">Swing Trader</Navbar.Brand>
+            <Navbar className="navbarColor" expand="lg">
+                <Navbar.Brand href="#home" className="titleNav">Swing Trader</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Dashboard</Nav.Link>
-                        <Nav.Link href="#link">Controle</Nav.Link>
+                        <Nav.Link href="#home" className="colorNav">Dashboard</Nav.Link>
+                        <Nav.Link href="#link" className="colorNav">Controle</Nav.Link>
                         <NavDropdown title="Configurações" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Aplicação de Taxas</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.1" className="colorNav">Aplicação de Taxas</NavDropdown.Item>
                             {/* <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                         </NavDropdown>
@@ -26,4 +27,4 @@ const Controle = () => {
 
 }
 
-export default Controle;
+export default Header;

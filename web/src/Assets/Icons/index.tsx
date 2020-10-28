@@ -3,4 +3,5 @@ export const Icons = {
     eye: require("./eye.svg"),
     delete: require("./delete.svg"),
     edit: require("./pen.svg"),
+    logout: require("./logout.svg"),
 }

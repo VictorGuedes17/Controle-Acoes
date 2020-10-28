@@ -1,27 +1,29 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/esm/NavDropdown';
-import Nav from 'react-bootstrap/esm/Nav';
-import './style.css'
+import { Icons } from '../../Assets/Icons';
+import './style.css';
+
 
 const Header = () => {
     return (
         <>
-            <Navbar className="navbarColor" expand="lg">
-                <Navbar.Brand href="#home" className="titleNav">Swing Trader</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link href="#home" className="colorNav">Dashboard</Nav.Link>
-                        <Nav.Link href="#link" className="colorNav">Controle</Nav.Link>
-                        <NavDropdown title="Configurações" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1" className="colorNav">Aplicação de Taxas</NavDropdown.Item>
-                            {/* <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <div className="container">
+                <div className="elements">
+                    <header>
+                        <a href="">Dashboard</a>
+                    </header>
+                    <header>
+                        <a href="">Controle</a>
+                    </header>
+                    <header>
+                        <a href="">Configurações</a>
+                    </header>
+                </div>
+                <div className="logout">
+                    <header>
+                        <a href=""><img src={Icons.logout} alt={"Logout"} />Sair</a>
+                    </header>
+                </div>
+            </div>
         </>
     );
 

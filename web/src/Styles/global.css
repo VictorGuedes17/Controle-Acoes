@@ -4,7 +4,6 @@
 }
 
 * {
-  
     color: #DFDAE8
 }
 
@@ -39,6 +38,16 @@ h2{
   .btnLogin{
     margin: 20px auto 8px auto;
     width: 12em;
+    background-color: #17a2b8;
+    color: #DFDAE8;
+    font-weight: bold;
+    border-radius: 4em;
+    border: none;
+}
+
+.btnAdd{
+    margin: 10px auto 20px auto;
+    width: 8em;
     background-color: #17a2b8;
     color: #DFDAE8;
     font-weight: bold;

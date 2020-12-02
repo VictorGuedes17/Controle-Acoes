@@ -1,0 +1,14 @@
+.cancelButton{
+  width: 120px;
+  height: 25px;
+  color: black;
+  background-color: red;
+  
+}
+
+.confirmButton{
+  width: 120px;
+  height: 25px;
+  color: black;
+  background-color: green;
+}

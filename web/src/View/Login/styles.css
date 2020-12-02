@@ -1,0 +1,40 @@
+.loginInput{
+  margin: 30px auto 8px auto;
+  background-color: RGB(0,0,0,0.1);
+  color: white;
+  border-color: RGB(0,0,0,0.1);
+  border-bottom-color: #DFDAE8;
+  width: 18em;
+}
+
+.loginInput:enabled{
+  outline: none;
+}
+
+.btnLogin{
+  margin: 20px auto 8px auto;
+  width: 12em;
+  background-color: #17a2b8;
+  color: #DFDAE8;
+  font-weight: bold;
+  border-radius: 4em;
+  border: none;
+}
+
+.btnAdd{
+  margin: 10px auto 20px auto;
+  width: 8em;
+  background-color: #17a2b8;
+  color: #DFDAE8;
+  font-weight: bold;
+  border-radius: 4em;
+  border: none;
+}
+
+.btnLogin:hover{
+ opacity: 0.8;
+}
+
+.btnLogin:enabled{
+ outline: none;
+}

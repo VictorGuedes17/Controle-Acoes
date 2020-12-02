@@ -1,28 +1,45 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './styles.css'
 import Header from '../../Components/Navbar'
-import { Icons } from '../../Assets/Icons';
 import TableContent from '../../Components/Table';
-import DefaultModal from '../../Components/Modal';
+import { requestAPI } from '../../Config/constants';
+import { getData } from '../../Common/storage';
+import { useRefreshTable } from '../../Context/auth';
+
+
 
 const Controle = () => {
-    const [open, setOpen] = useState(false);
+    const [data, setData] = useState([]);
+    const userData = getData('user');
+    const { refresh, setRefresh } = useRefreshTable();
 
-    const renderModal = () => {
-        return(
-            <DefaultModal open={open} close={() => setOpen(false)} />
-        )
-    }
+    useEffect(() => {
+        const userUid = userData[0] && userData[0]._id || "";
+        if(refresh === false){
+        }
+        else{
+        setRefresh(false);
+        (async function getPappers(){
+            const response = await requestAPI({
+                params: `/control/getPappers`,
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: {
+                  userUid: userUid
+                }
+              });
 
-    return (
+              const controlData = response;
+              setData(controlData);
+        })()}
+    },[refresh === true])
+   
+
+     return (
         <>
-            <Header />
             <div className="col-lg-12 mt-2 h-75 p-5">
-                <div className="row-lg-1 d-flex align-itens-start justify-content-center">
-                <button className="btnAdd" onClick={() => setOpen(true)}>Adicionar</button>
-                </div>
                 <div className="row-lg-11">
-                    <TableContent />
+                    <TableContent data={data} />
                 </div>
             </div>
             <div className="row-md-12 mt-5">
@@ -32,7 +49,6 @@ const Controle = () => {
                     </div>
                 </div>
             </div>
-            {renderModal()}
         </>
     )
 

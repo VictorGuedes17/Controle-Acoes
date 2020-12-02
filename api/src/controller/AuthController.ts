@@ -18,7 +18,7 @@ export default class AuthController {
     const { email, password } = req.body;
     try {
       const user: any[] = await User.find ({ email: email, password: password });
-
+      console.log(user)
       if(!user.length){
         return res.json({
           success: false,

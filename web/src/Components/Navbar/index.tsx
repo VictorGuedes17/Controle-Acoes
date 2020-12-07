@@ -24,10 +24,10 @@ const Header = () => {
                         <a href="/dashboard">Dashboard</a>
                     </header>
                     <header>
-                        <a href="">Controle</a>
+                        <a href="/controlpainel">Controle</a>
                     </header>
                     <header>
-                        <a href="">Configurações</a>
+                        <a href="/configuracoes">Configurações</a>
                     </header>
                 </div>
                 <div className="logout">

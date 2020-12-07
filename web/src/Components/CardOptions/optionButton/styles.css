@@ -1,0 +1,9 @@
+.btnCard{
+  margin: 10px auto 20px auto;
+  width: 8em;
+  background-color: #17a2b8;
+  color: #DFDAE8;
+  font-weight: bold;
+  border: none;
+  outline:none;
+}

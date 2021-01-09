@@ -14,7 +14,7 @@ const Header = () => {
         excludeData("token");
         excludeData("user");
         setIsLoginPage(true);
-        history.push("/");
+        window.location.href = "/";
     } 
     return (
         <>

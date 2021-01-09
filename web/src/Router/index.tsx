@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Component, useContext, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,15 +12,45 @@ import Controle from "../View/Controle";
 import Login from "../View/Login";
 import Dashboard from "../View/Dashboard";
 import Header from '../Components/Navbar'
+import { getData } from "../Common/storage";
 
-export default function AppRouter() {
-  const { isLoginPage, setIsLoginPage } = useVerifyLogin();
+interface State {
+  isLogged: boolean;
+  loading: boolean;
+}
 
-  return (
-      <Router>
-        {isLoginPage === false ? 
-      <Header /> : <></>
+export default class AppRouter extends Component {
+  state = {
+    isLogged: false,
+    loading: true
+  };
+
+  async componentDidMount() {
+      await this.getUser();
+      setTimeout(() => {
+        this.setState({ loading: false })
+      },3000)
+  }
+
+  getUser = async() => {
+    const userData: any[] = getData('user');
+    if (userData && userData.length > 0) {
+      this.setState({ isLogged: true })
+    } else {
+      if (window.location.href !== "http://localhost:3000/") {
+        window.location.href = "/"
       }
+    }
+  }
+
+  render() {
+    const { isLogged, loading } = this.state;
+
+    return (
+      loading ? <h1>Carregando</h1> : 
+      <Router>
+        {!isLogged ? <></> :
+          <Header />}
         <Switch>
           <Route path='/' exact>
             <Login />
@@ -33,5 +63,6 @@ export default function AppRouter() {
           </Route>
         </Switch>
       </Router>
-  )
+    )
+  }
 }

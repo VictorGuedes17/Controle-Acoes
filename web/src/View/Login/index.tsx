@@ -36,7 +36,8 @@ const Login = () => {
       if (success) {
         setData('token', token);
         setData('user',user);
-        history.push("/controlpainel");
+        window.location.href = "/controlpainel"
+        // history.push("/controlpainel");
         setIsLoginPage(false);        
       }
       else {

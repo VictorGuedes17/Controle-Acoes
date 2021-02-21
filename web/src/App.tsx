@@ -8,9 +8,10 @@ import { AuthProvider } from './Context/auth';
 function App() {
   return (
     <>
-      <AuthProvider>
+      {/* <AuthProvider>
         <AppRouter />
-      </AuthProvider>
+      </AuthProvider> */}
+      <h1>helloWorld</h1>
     </>
   );
 }
